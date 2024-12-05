@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\afawo\\dev\\workspace\\robotics\\my_first_simulation\\controllers\\EPuckAvoidCollision\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F0CF8FA8-C55B-477D-97A7-084FA1AEF3FF}|EPuckAvoidCollision.vcxproj|C:\\Users\\afawo\\dev\\workspace\\robotics\\my_first_simulation\\controllers\\EPuckAvoidCollision\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F0CF8FA8-C55B-477D-97A7-084FA1AEF3FF}|EPuckAvoidCollision.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\afawo\\dev\\workspace\\robotics\\my_first_simulation\\controllers\\EPuckAvoidCollision\\Main.cpp",
+              "RelativeDocumentMoniker": "Main.cpp",
+              "ToolTip": "C:\\Users\\afawo\\dev\\workspace\\robotics\\my_first_simulation\\controllers\\EPuckAvoidCollision\\Main.cpp",
+              "RelativeToolTip": "Main.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-17T16:24:22.353Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

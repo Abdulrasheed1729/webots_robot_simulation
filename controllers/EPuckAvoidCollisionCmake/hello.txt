@@ -1,0 +1,51 @@
+cmake_minimum_required(VERSION 3.5)
+
+# Setup the project.
+# Its name is defined to be the controller directory name.
+get_filename_component(PROJECT_NAME ${CMAKE_SOURCE_DIR} NAME)
+project(${PROJECT_NAME})
+
+# Get C or C++ sources in the current directory (only).
+file(GLOB C_SOURCES *.c)
+file(GLOB CPP_SOURCES *.cpp)
+set(SOURCES ${C_SOURCES} ${CPP_SOURCES})
+
+# Set the Webots home path (change it according to your installation method)
+if(WIN32)
+    if (NOT DEFINED WEBOTS_HOME)
+        set(WEBOTS_HOME "C:/Program Files/Webots")
+    endif()
+else()
+    if (NOT DEFINED WEBOTS_HOME)
+        set(WEBOTS_HOME "/usr/local/webots")
+    endif()
+endif()
+
+# Validate WEBOTS_HOME exists
+if (NOT EXISTS "${WEBOTS_HOME}")
+    message(FATAL_ERROR "WEBOTS_HOME path does not exist: ${WEBOTS_HOME}")
+endif()
+
+# Link with the Webots controller library.
+link_directories(${WEBOTS_HOME}/lib/controller)
+
+# Set the appropriate libraries for C and C++ controllers
+if(WIN32)
+    set(LIBRARIES Controller.lib CppController.lib)
+else()
+    set(LIBRARIES m ${CMAKE_SHARED_LIBRARY_PREFIX}Controller${CMAKE_SHARED_LIBRARY_SUFFIX} 
+                  ${CMAKE_SHARED_LIBRARY_PREFIX}CppController${CMAKE_SHARED_LIBRARY_SUFFIX})
+endif()
+
+# Include Webots controller headers
+include_directories(${WEBOTS_HOME}/include/controller/c ${WEBOTS_HOME}/include/controller/cpp)
+
+# Setup the target executable.
+add_executable(${PROJECT_NAME} ${SOURCES})
+target_link_libraries(${PROJECT_NAME} ${LIBRARIES})
+
+# Copy the target executable to the source directory for Webots to detect it.
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+    $<TARGET_FILE:${PROJECT_NAME}> ${CMAKE_SOURCE_DIR}
+)

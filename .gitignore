@@ -1,0 +1,6 @@
+*.exe
+controllers/**/build
+controllers/**/Debug
+controllers/**/Release
+controllers/**/x64
+controllers/**/.cache
